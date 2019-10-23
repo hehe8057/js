@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jquery-ajax</title>
+	<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    // 
+	$(function(){
+		//var url = "http://134.175.154.93:6677/address/findAddressAll";
+		/*
+		var param = {id:148}
+         var url = "http://134.175.154.93:6677/address/findByCategoryId";
+		$.get(url,param,function(data,textStatus){
+           console.log(data,textStatus);
+		})
+		*/
+
+		var url ="http://134.175.154.93:6677/address/insertAddress"; 
+        
+        var data = {
+        	province:"湖南",
+        	city:"常德市",
+            area:"鼎城区",
+            address:"善卷路",
+            telephone:"18279877521"
+        }
+        
+        //Contet-Type,queryString
+        $.post(url,data,function(response,status){
+            console.log(response,status);
+        })
+
+        
+	})
+</script>
+</body>
+</html>

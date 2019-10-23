@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>动态表格</title>
+	<style>
+	    .btns{
+           margin-bottom: 5px;
+	    }
+		.btn{
+			display: inline-block;
+			padding: .3em 1.2em;
+			border-radius: 3px;
+			background-color: teal;
+			color: #fff;
+			cursor: pointer;
+		}
+		table.table{
+			box-sizing: border-box;
+			width: 100%;
+			border-collapse: collapse;
+		} 
+		table.table td,
+		table.table th{
+           border:1px solid #ccc;
+           line-height: 2em;
+           text-align: center;       
+		}
+		.none{
+           display: none;
+		}
+	</style>
+</head>
+<body>
+    <div class="btns">
+		<div class="btn" id="btn_add">添加</div>
+		<div class="btn">批量导入</div>
+		<div class="btn">批量删除</div>
+    </div>
+    <table class="table">
+    	<thead>
+    		<tr>
+    			<th width="60px">编号</th>
+    			<th width="200px">姓名</th>
+    			<th>性别</th>
+    			<th>手机</th>
+    			<th width="100px">操作</th>
+    		</tr>
+    	</thead>
+    	<tbody>
+    		<tr class="none">
+    			<td><input type="checkbox"></td>
+    			<td></td>
+    			<td></td>
+    			<td></td>
+    			<td>
+    				<a class="btn_del" href="javascript:void(0)">删除</a>
+    				<a class="btn_upd" href="javascript:void(0)">修改</a>
+    			</td>
+    		</tr>
+    	</tbody>
+    </table>
+
+
+
+    <script>
+    var btn_add = document.getElementById("btn_add");
+    var tbody = document.getElementsByTagName("tbody")[0];
+
+
+    
+    //为删除按钮绑定事件处理函数
+    tbody.onclick = function(event){
+        var target = event.target;
+        if(target.nodeName === "A"){
+            if(target.className === "btn_del"){
+                tbody.removeChild(target.parentNode.parentNode);
+            }
+            if(target.className === "btn_upd"){
+               alert("修改");
+            }
+        }
+    }
+
+
+    //鼠标放上去当前行添加背景色
+
+
+    /*
+    var btn_del = document.getElementByClassName("btn_del");
+    for(var i=0;i<btn_dels.length;i++){
+        var btn_del = btn_dels[i];
+        btn_del.onclick = function(){
+         alert(1);
+        }
+    }*/
+
+
+    //为添加按钮绑定事件函数
+	btn_add.onclick= function(event){
+	    //产生一个tr
+        var newTr = tbody.firstElementChild.cloneNode(true);
+        newTr.children[1].innerHTML = "<strong>"+Math.random()+"</strong>";
+
+        //<strong>0.3232</strong>
+        newTr.className = "";
+        tbody.appendChild(newTr);
+        //将一个tr追加到tbody
+	};
+
+    </script>
+</body>
+</html>

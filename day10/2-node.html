@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>node api</title>
+</head>
+<body>
+    <!-- 这是一个注释 -->
+	<div>one</div>
+	<div>two</div>
+
+	<script>
+		var body = document.body;
+         console.log(body.ownerDocument === document);
+
+		console.log(body.parentNode);
+		console.log(body.childNodes[3].nextSibling.nextSibling.previousSibling.previousSibling);
+		console.log(body.previousSibling);
+		console.log(body.firstChild);
+		console.log(body.lastChild);
+
+        
+		console.log(body.childNodes[0].nodeType);
+		console.log(body.childNodes[0].nodeName);
+		console.log(body.childNodes[0].nodeValue);
+        console.log(body.children);
+		//判断document是否是Document类型
+       //alert(document.nodeName);
+       //alert(body.nodeName);
+       //alert(document.nodeValue);
+       //alert(body.nodeValue);   
+	</script>
+</body>
+</html>

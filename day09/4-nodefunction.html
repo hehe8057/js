@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>node方法</title>
+</head>
+<body>
+	<div id="one">
+		<div>one</div>
+		<div>two</div>
+		<p>three</p>
+		<h1>four</h1>
+	</div>
+	<div id="two">divtwo</div>
+	<script>
+        var one = document.body.children[0];
+        var two = document.body.children[1];
+       console.log(one,two);
+       // 将two追加在one的孩子后
+       //one.appendChild(two);
+         var two_copy = two.cloneNode(true);
+       two_copy.id = "two_copy";
+       //one.appendChild(two_copy);
+       one.insertBefore(two_copy);
+	</script>
+</body>
+</html>

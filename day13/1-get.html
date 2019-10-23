@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ajax-get</title>
+	<script>
+		window.onload = function(){
+			function getAllCustomer(){
+				//实例化xhr对象
+				var xhr = new XMLHttpRequest();
+				//设置请求行
+				xhr.open("get","http://134.175.154.93:6677/customer/findCustomerAll");
+				//设置请求头(Content-Type)
+				xhr.responseType = "json";
+				xhr.send()
+				//监听响应
+				xhr.onreadystatechange = function(){
+					if(this.readyState === 4){
+						if(this.status === 200){
+							console.log(this.response);
+						}else{
+							console.log("error",this.response);
+						}
+					}
+				}
+			}
+			//调用getAllCustomer获取数据
+			getAllCustomer();
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

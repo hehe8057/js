@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+	<script>
+	// 第一个乘法表
+		for(var x=1;x<=9;x++){   //竖行
+	    	for(var y=1;y<=x;y++){   //横行
+	        	document.write(y+"*"+x+" = " +x*y+(x*y<10?"&nbsp; &nbsp;":"&nbsp;"))
+    	 	}
+    	 	document.write("<br/>")
+    	}
+    	document.write("<br/>");
+    // 第二个乘法表
+        for(var i=9;1<=i;i--){
+			for(var p=1;p<=i;p++){
+				document.write(p+"*"+i+" = "+p*i+(i*p<10?"&nbsp; &nbsp;":"&nbsp;"));
+			}
+		    document.write("<br/>");
+	    }
+	    document.write("<br/>");
+	</script>
+	<style>
+	    div{
+	    	text-align: right;
+	    	float: left;
+	    }
+	</style>
+</head>
+<body> 
+	<div >
+		<script>
+			for(var a=1;a<=9;a++){   //竖行
+	    	    for(var b=1;b<=a;b++){   //横行
+	        	    document.write("&nbsp;&nbsp;"+b+"*"+a+" = " +(a*b<10?" &nbsp;&nbsp":"")+a*b)
+    	 	    }
+    	 	document.write("<br/>")
+    	    }
+    	    document.write("<br/>")
+		    for(var c=9;1<=c;c--){
+			  for(var d=1;d<=c;d++){
+				 document.write("&nbsp;&nbsp;"+d+"*"+c+" = "+(c*d<10?" &nbsp;&nbsp":"")+d*c);
+			  }
+		    document.write("<br/>");
+	        }
+		</script>
+	</div>
+</body>
+</html>

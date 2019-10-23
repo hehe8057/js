@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>node api</title>
+</head>
+<body>
+	<div>one</div>
+	<div>two</div>
+
+	<script>
+		var body = document.body;
+		console.log(body.ownerDocument === document);
+        console.log(body.parentNode);
+
+        console.log(body.childNodes[3].nextSibling);
+
+		console.log(body.previousSibling);
+        console.log(body.firstChild);
+        console.log(body.lastChild);        
+
+
+
+
+		console.log(document.nodeType);
+		if(document.nodeType === Node.DOCUMENT_NODE){
+            alert(Node.DOCUMENT_NODE);
+		}
+		console.log(body.childNodes[0].nodeType);
+		console.log(body.childNodes[0].nodeValue);
+		console.log(body.childNodes[0].nodeName);
+        
+        console.log(body.children);
+	</script>
+</body>
+</html>
